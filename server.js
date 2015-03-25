@@ -29,6 +29,7 @@ app.use(session({resave: true,
                   key: config.sessionKey,
 				  secret: config.sessionSecret,
                   cookie: {maxAge:config.sessionTimeout} }));
+
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
 // error handling middleware should be loaded after the loading the routes
