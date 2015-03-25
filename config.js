@@ -4,8 +4,8 @@ module.exports = {
     sessionSecret: 'login_secret',
     sessionTimeout: 1000*60*2,  // 2 minute session timeout
     env: 'dev',   // alternative modes: test, production
-    dbhost: 'ds049181.mongolab.com:49181',
-    dbname: 'heroku_app34523040',
+    dbhost: 'ds053160.mongolab.com:53160',
+    dbname: 'heroku_app35212482',
     dbuser: 'zhengye1',
     dbpass: 'Yukirin0715'
  }
