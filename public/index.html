@@ -1,0 +1,22 @@
+<!DOCTYPE html="en">
+<html ng-app="eatz">
+<head>
+	<title>Test Angular</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="container" ng-controller="StoreController as store">
+	<div class="row-fluid" ng-repeat="product in store.products | orderBy: 'price'">
+		<ul class="thumbnails">
+				<product-title></product-title>
+				<product-panels></product-panels>
+		</ul>
+
+	</div>
+<script src="js/lib/angular.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/module/products.js"></script>
+</body>
+</html>

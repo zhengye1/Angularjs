@@ -1,0 +1,50 @@
+[
+  {
+    "name": "FirstGem",
+    "price": 25.0,
+    "description":"FirstGem Description",
+    "images":[
+      {
+        "full":"img",
+        "thumb":"img/food1thumb.jpg"
+      }],
+    "specification":"FirstGem Specification",
+    "reviews":[
+      {
+        "stars":5,
+        "body":"Test1",
+        "author":"Vincent@example.com",
+        "createdOn": 1397490980837
+      },
+      {
+        "stars":4,
+        "body":"Test1 - Yuki",
+        "author":"Yuki@example.com",
+        "createdOn": 1397490980837
+      }]
+  },
+  {
+    "name": "SecondGem",
+    "price": 3.0,
+    "description":"SecondGem Description",
+    "images":[
+      {
+        "full":"img",
+        "thumb":"img/food2thumb.jpg"
+      }],
+    "specification":"SecondGem Specification",
+    "reviews":[
+      {
+        "stars":5,
+        "body":"Test2",
+        "author":"Vincent@example.com",
+        "createdOn": 1397490980836
+      },
+      {
+        "stars":4,
+        "body":"Test2 - Yuki",
+        "author":"Yuki@example.com",
+        "createdOn": 1397490980837
+      }]
+  }
+]
