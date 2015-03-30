@@ -53,7 +53,8 @@ app.listen(app.get('httpport'), function(){
     console.log('Express server listening on port ' + app.get('httpport'));
 });
 
-https.createServer(options, app).listen(app.get('httpsport'), function(){
+
+/*https.createServer(options, app).listen(app.get('httpsport'), function(){
   console.log('Express server listening on port ' + app.get('httpsport'));
-});
+});*/
 
