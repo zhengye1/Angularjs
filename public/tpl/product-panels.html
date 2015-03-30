@@ -1,52 +1,55 @@
 <section>
-	<ul class="nav nav-pills">
-	<li ng-class="{ active: panels.isSelected(1)}"><a href ng-click="panels.selectTab(1)">Description</a></li>
-	<li ng-class="{ active: panels.isSelected(2)}"><a href ng-click="panels.selectTab(2)">Specifications</a></li>
-	<li ng-class="{ active: panels.isSelected(3)}"><a href ng-click="panels.selectTab(3)">Reviews</a></li>
-	</ul>
-	<div ng-show="panels.isSelected(1)">
-		<h4>
-			Description
-		</h4>
-		<blockquote>
-			{{product.description}}
-		</blockquote>
-		</div>
-	<div ng-show="panels.isSelected(2)">						
-		<h4>
-			Specifications
-		</h4>
-	</div>
-	<div ng-show="panels.isSelected(3)">
-		<h4>
-			Reviews
-		</h4>
-		<blockquote ng-repeat="review in product.reviews">
-			<b>{{review.stars}} Star</b>
-			{{review.body}}
-			<cite>by: {{review.author}} on {{review.createdOn | date}}</cite>
-		</blockquote>
-		
-		<h4>Submit a Review</h4>
-		<form name="reviewForm" ng-controller="ReviewController as reviewCtrl" 
-		                        ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
-			<!-- Live version -->
-			<blockquote>
-				<b>Star: {{reviewCtrl.review.stars}}</b>
-				{{reviewCtrl.review.body}}
-				<cite>by: {{reviewCtrl.review.author}}</cite>						
-			</blockquote>		
-			<select ng-model="reviewCtrl.review.stars" required>
-				<option value="">Rate the Product</option>
-				<option value="1">1 Star</option>
-				<option value="2">2 Star</option>
-				<option value="3">3 Star</option>
-				<option value="4">4 Star</option>
-				<option value="5">5 Star</option>
-			</select>
-			<textarea ng-model="reviewCtrl.review.body" placeholder="Write a short review of the product..." required></textarea>
-			<input name="author" type="email" ng-model="reviewCtrl.review.author" required />
-			<input type="submit" value="submit" />
-		</form>
-	</div>
+    <ul class="nav nav-pills">
+        <li ng-class="{ active: panels.isSelected(1)}"><a href ng-click="panels.selectTab(1)">Description</a></li>
+        <li ng-class="{ active: panels.isSelected(2)}"><a href ng-click="panels.selectTab(2)">Specifications</a></li>
+        <li ng-class="{ active: panels.isSelected(3)}"><a href ng-click="panels.selectTab(3)">Reviews</a></li>
+    </ul>
+    <div ng-show="panels.isSelected(1)">
+        <h4>
+            Description
+        </h4>
+        <blockquote>
+            {{product.description}}
+        </blockquote>
+    </div>
+    <div ng-show="panels.isSelected(2)">
+        <h4>
+            Specifications
+        </h4>
+    </div>
+    <div ng-show="panels.isSelected(3)">
+        <h4>
+            Reviews
+        </h4>
+        <blockquote ng-repeat="review in product.reviews">
+            <b>{{review.stars}} Star</b>
+            {{review.body}}
+            <cite>by: {{review.author}} on {{review.createdOn | date}}</cite>
+        </blockquote>
+
+        <h4>Submit a Review</h4>
+        <form name="reviewForm" ng-controller="ReviewController as reviewCtrl"
+              ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
+            <!-- Live version -->
+            <blockquote>
+                <b>Star: {{reviewCtrl.review.stars}}</b>
+                {{reviewCtrl.review.body}}
+                <cite>by: {{reviewCtrl.review.author}}</cite>
+            </blockquote>
+            <select ng-model="reviewCtrl.review.stars" required>
+                <option value="">Rate the Product</option>
+                <option value="1">1 Star</option>
+                <option value="2">2 Star</option>
+                <option value="3">3 Star</option>
+                <option value="4">4 Star</option>
+                <option value="5">5 Star</option>
+            </select>
+            <br>
+            <textarea  placeholder="Write a short review of the product..." ng-model="reviewCtrl.review.body" required></textarea>
+            <br>
+            <input type="email" name="author" ng-model="reviewCtrl.review.author" required />
+            <br>
+            <input type="submit" value="submit" />
+        </form>
+    </div>
 </section>
