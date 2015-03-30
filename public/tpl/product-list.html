@@ -1,20 +1,22 @@
 <div class="container-fluid">
-    <div class="col-md-2">
-        <!--Sidebar content-->
+    <div class="row">
+        <div class="col-md-2">
+            <!--Sidebar content-->
 
-        Search: <input ng-model="query">
-        Sort by:
-        <select ng-model="orderProp">
-            <option value="name">Alphabetical</option>
-            <option value="price">Price</option>
-        </select>
-    </div>
-
-    <div class="row-fluid" ng-repeat="product in store.products | filter: query | orderBy: orderProp">
-        <ul class="thumbnails">
-            <product-title></product-title>
-            <product-panels></product-panels>
+            Search: <input ng-model="query">
+            Sort by:
+            <select ng-model="orderProp">
+                <option value="name">Alphabetical</option>
+                <option value="price">Price</option>
+            </select>
+        </div>
+        <div class = "col-md-10">
+            <!--Body Content -->
+            <ul class="products">
+                <li ng-repeat="product in store.products | filter: query | orderBy: orderProp" class="thumbnail">
+                    <product-title></product-title>
+                    <product-panels></product-panels>
             </ul>
-
+        </div>
     </div>
 </div>

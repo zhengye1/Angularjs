@@ -13,13 +13,12 @@ var app = angular.module('eatz', ['ngRoute', 'store-products'])
                     templateUrl:'tpl/404.html'
                 });
         }])
-    .controller('StoreController', ['$http',function($http){
-        var store = this;
-        store.products = [];
+    .controller('StoreController', ['$http', '$scope', function($http, $scope){
         $http.get('/public/js/models/products.json').success(function(data){
-            store.products = data;
-            store.products.orderProp = 'price';
+            //console.log($scope);
+            $scope.store.products = data;
         });
+        $scope.orderProp = 'price';
     }])
     .controller('ReviewController', function(){
         this.review = {};
