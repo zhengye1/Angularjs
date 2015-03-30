@@ -11,6 +11,7 @@ var https = require('https'),   // ADD CODE
     // NOTE, use the version of "express" linked to the assignment handout
     express = require('express'), // Express Web framework   ... ADD CODE
     fs = require("fs"),
+    http = require('http'),
     config = require("./config"); 
 var logger = require('morgan');
 var session = require('express-session');
@@ -22,7 +23,8 @@ var eatz = require('./routes/eatz');
 var app = express();  // Create Express app server
 
 // all environments
-app.set('port', process.env.PORT || config.port);
+app.set('httpsport', process.env.PORT || config.httpsport);
+app.set('httpport', process.env.PORT || config.httpport);
 app.use(logger('dev'));
 app.use(session({resave: true,
                   saveUninitialized: true,
@@ -47,7 +49,11 @@ var options = {
   cert: fs.readFileSync('cert.pem')  // RSA public-key certificat
 };
 
-https.createServer(options, app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
+app.listen(app.get('httpport'), function(){
+    console.log('Express server listening on port ' + app.get('httpport'));
+});
+
+https.createServer(options, app).listen(app.get('httpsport'), function(){
+  console.log('Express server listening on port ' + app.get('httpsport'));
 });
 

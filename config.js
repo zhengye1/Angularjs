@@ -1,5 +1,6 @@
 module.exports = {
-    port:41402,
+    httpsport:41402,
+    httpport:41401,
     sessionKey: 'sess.eatz',
     sessionSecret: 'login_secret',
     sessionTimeout: 1000*60*2,  // 2 minute session timeout
