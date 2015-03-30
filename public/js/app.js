@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('eatz', ['ngRoute', 'store-products'])
+var app = angular.module('eatz', ['ngRoute', 'store-products', 'navbarapp'])
     .config(['$routeProvider',
         function($routeProvider){
             $routeProvider.when('/', {
