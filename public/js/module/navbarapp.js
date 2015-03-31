@@ -14,8 +14,10 @@ angular.module('navbarapp', [])
                 for (index = 0, length = liElements.length; index < length; index++) {
                     li = liElements[index];
                     links = $(li).find("a");
-                    if ($(links[0]).textContent === attrs.currentTab)
+
+                    if ($(links[0]).textContent === $(attrs)[0].currentTab){
                         $(li).addClass("active");
+                    }
                 }
             }
         }})
